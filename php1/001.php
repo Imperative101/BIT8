@@ -1,95 +1,80 @@
 <?php 
-$myName = "Jekaterina";
-$mysecondname = "Mazrimaite";
-$myyear = "1999";
-$year = "2005";
+/* 1 uzd */
+$str1 = "Jennifer";
+$str2 = "Coolidge";
 
-echo "myName = $myName  ";
-echo "<br />";
-echo " mysecondname = $mysecondname ";
-echo "<br />";
-echo "myyear = $myyear ";
-echo "<br />";
-echo "year = $year ";
-echo "<br />";
+echo substr_count($str1, "is" , 8);
+echo substr_count($str2, "is" , 8);
 
-#rand 0-4
+/* 2 uzd */
 
+$input_str = "Jennifer";
+$result_str = strtolower($input_str); //uppercase
+echo $result_str;
 
-$x = 0;
-$y = 4;
-echo mt_rand($x, $y);
-$dal = $x / $y;
-echo "result of $x and $y = $dal <br />";
-echo(round(0.5) . "<br>");
+$input_str = "Coolidge";
+$result_str = lcfirst($input_str); //lowercase
+echo $result_str;
 
-# tris kintamuosius 
-$n1 = rand (0, 25);
-$n2 = rand (0, 25);
-$n3 = rand (0, 25);
-$numbers = $n1+$n2+$n3;
-//$middle = array_sum($numbers)/count($numbers);
-//echo $middle;
+/* 3 uzd   Sukurti du kintamuosius. Jiems priskirti savo mylimo aktoriaus vardą ir pavardę kaip stringus. 
+Sukurti trečią kintamąjį ir jam priskirti stringą, sudarytą iš trijų paskutinių vardo ir pavardės kintamųjų raidžių. 
+Jį atspausdinti. */
 
-$str = ' ';
-$nums = explode(' ', $str);
-array_pop($nums);
-echo array_sum($nums) / count($nums);
-
-#trikampis
-//$base = "base";
-//$height = "height";
-//if(isset($_POST['submit']))  
-//    {   
-//$base = $_POST['base'];   
-//$height = $_POST['height'];   
-//$area = ($base*$height) / 2;   
-//echo " ";   
+$str1 = "Roman";
+$str2 = "Briggs";
+$str3 = "Hobbs";
+/* nezinau kaip sujungti*/
 
 
 
+/* 4 uzd */
 
 
-# 0-100
-
-$x = rand (0, 100);
-$y = rand (0, 100);
-$z = rand (0, 100);
-echo mt_rand($x, $y, $z);
-$dal = ($x + $y + $z)/3;
-echo "result of $x and $y and $z= $dal <br />";
+/* 5 uzd */
 
 
-echo(round(1.0) . "<br>");
-
-# 1-6
-
-$x = 1;
-$y = 6;
-echo mt_rand($x, $y);
-$dal = $x / $y;
-echo "result of $x and $y = $dal <br />";
-echo("h3" . round(0.5) . "<h3>");
-
-#birthdate
-#way 1
-$from = new DateTime('1999-12-22');
-$to   = new DateTime('today');
-echo $from->diff($to)->y;
-
-# way3
-echo date_diff(date_create('1999-12-22'), date_create('today'))->y;
-
-#way 2
-
-    $dob='1999-12-22';
-    $diff = (date('Y') - date('Y',strtotime($dob)));
-    echo $diff;
-
-//output 21
+$new = htmlspecialchars("<a>An American in Paris</a>", ENT_QUOTES);
+echo $new; 
 
 
-#clock
 
+$str = 'An American in Paris!';
+$pattern = 'a';
+echo preg_replace($pattern, '*', $str);
+
+
+/* 6 uzd */
+
+$string = "An American in Paris!"; 
+echo 'output is :- '.substr_count($string,"php");
+
+
+/* 7 uzd */
+
+
+/* 8 uzd */
+
+
+/* 9 uzd */
+
+echo str_word_count("Don't Be a Menace to South Central While Drinking Your Juice in the Hood");
+
+$string1="Don't Be a Menace to South Central While Drinking Your Juice in the Hood";
+$string2="Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale";
+if(!preg_match_all("/\b[a-zA-Z0-9]{4,}\b/", $string1))
+{
+    echo "Should be allowed";
+}
+
+echo str_word_count("Don't Be a Menace to South Central While Drinking Your Juice in the Hood" && "Tik nereikia gąsdinti Pietų Centro, geriant sultis pas save kvartale");
+
+/* 10 uzd */
+
+$seed = str_split('abcdefghijklmnopqrstuvwxyz'
+                 .'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+                 .'0123456789!@#$%^&*()'); 
+shuffle($seed); 
+$rand = '';
+foreach (array_rand($seed, 3) as $k) $rand .= $seed[$k];
 
 ?>
