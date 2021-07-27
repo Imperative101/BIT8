@@ -1,4 +1,5 @@
 <?php 
+/* wr homework*/
 /* 1 uzd */
 $str1 = "Jennifer";
 $str2 = "Coolidge";
