@@ -1,0 +1,5 @@
+<?php
+// masyvai right way
+
+
+?>

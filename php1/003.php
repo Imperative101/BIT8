@@ -47,18 +47,7 @@ for ($i=1; $i<=10; $i++)
 
 // 6
 
-$heads = $tails = $both = 0;
-for ($i = 0; i < 100; i+=1)
-{
-  $coin1 = rand(0, 1);
-  $coin2 = rand(0, 1);
-  if ($coin1 & $coin2) $heads += 1;
-  if (!($coin1 & $coin2)) $tails += 1;
-  else $both+=1;
-}
-echo("Heads: $heads");
-echo("Tails: $tails");
-echo("Both: $both");
+
 
 // 9
 
