@@ -12,7 +12,7 @@
 
 <?php 
 
-
+//1 Sukurkite 4 kintamuosius, kurie saugotų jūsų vardą, pavardę, gimimo metus ir šiuos metus (nebūtinai tikrus). Parašykite kodą, kuris pagal gimimo metus paskaičiuotų jūsų amžių ir naudodamas vardo ir pavardės kintamuosius atspausdintų tokį sakinį :
 
 $myName = "Jake";
 $mysecondname = "M";
@@ -29,8 +29,7 @@ echo "year = $year ";
 echo "<br />";
 
 
-#rand 0-4
-
+//2 Naudokite funkcija rand(). Sukurkite du kintamuosius ir naudodamiesi funkcija rand() jiems priskirkite atsitiktines reikšmes nuo 0 iki 4. Didesnę reikšmę padalinkite iš mažesnės. Atspausdinkite rezultatą jį suapvalinę iki 2 skaičių po kablelio.
 
 $x = 0;
 $y = 4;
@@ -49,7 +48,8 @@ if ($rand >0) {
     echo " dalyba is 0 negalima<br> ";
 }
 
-# tris kintamuosius 
+// 3 Naudokite funkcija rand(). Sukurkite tris kintamuosius ir naudodamiesi funkcija rand() jiems priskirkite atsitiktines reikšmes nuo 0 iki 25. Raskite ir atspausdinkite kintąmąjį turintį vidurinę reikšmę.
+
 $n1 = rand (0, 25);
 $n2 = rand (0, 25);
 $n3 = rand (0, 25);
@@ -65,7 +65,8 @@ elseif ($s3<$s1 && $s3>$s2 || $s3<$s2 && $s3>$s1) {
 echo "<h3> vidutines reiksmes negalima nustatyti, nes aptiktos vienodos reiksmes </h3>";
 }
 
-#trikampis
+//4 Įvedami skaičiai -a, b, c –kraštinių ilgiai, trys kintamieji (naudokite ​rand()​ funkcija nuo 1 iki 10). Parašykite PHP programą, kuri nustatytų, ar galima sudaryti trikampį ir atsakymą atspausdintų. 
+
 
 $a = rand(1,10);
 $b = rand(1,10);
@@ -111,7 +112,7 @@ if ($rand3>10 && $rand1<90){
 }
 
 
-# 1-6
+// 6 Naudokite funkcija rand(). Sugeneruokite atsitiktinį skaičių nuo 1 iki 6 ir jį atspausdinkite atitinkame h tage. Pvz skaičius 3- rezultatas: <h3>3</h3>
 
 $x = 1;
 $y = 6;
