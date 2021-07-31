@@ -357,6 +357,20 @@ echo "<br>Unikalios, nepasikartojančios reikšmės: ".$count;
 
 //7 sugeneruokite masyvą, kuris būtų sudarytas iš reikšmių, kurios yra pirmame 6 uždavinio masyve, 
 //bet nėra antrame 6 uždavinio masyve.
+$rndNums=[];
+$rndNums2=[];
+$mergedarr=[];
+$word="";
+$rand=rand(100,999);
+for($i=0; $i<100; $i++){
+    if (!in_array($rand, $rndNums)) { 
+       array_push($rndNums, rand(100,999));
+} 
+
+
+}
+echo "<br>";
+print_r($rndNums);
 
 //8 Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 6 uždavinio masyvuose.
 
@@ -385,6 +399,105 @@ for ($i=0; $i < count($zoo); $i++) {
     $animal = $zoo[$i];
     echo $animal;
 }
+///
 
+
+echo '11. <br>';
+$array7 = [];
+$length = 0;
+do {
+    $unique = false;
+    do {
+        $random = rand(0, 300);
+        if (!array_search($random, $array1)) {
+            $array7[$length] = $random;
+            $unique = true;
+            $length++;
+        }
+    } while (!$unique);
+} while ($length < 101);
+rsort($array7);
+$biggest = $array7[0];
+// print_r($array7);
+unset($array7[0]);
+// print_r($array7);
+$sorted = false;
+    $array8 = [];
+    $array9 = [];
+do {
+    shuffle($array7);
+    $sorted = true;
+    $array8 = [];
+    $array9 = [];
+    $j = 0;
+    $sum1 = 0;
+    $sum2 = 0;
+    foreach($array7 as $value) {
+        if ($j % 2 === 0) {
+            $array8[] = $value;
+            $sum1 += $value;
+        } else {
+            $array9[] = $value;
+            $sum2 += $value;
+        }
+        $j++;
+    }
+    $diff = ($sum1 > $sum2) ? $sum1 - $sum2 : $sum2 - $sum1;
+    //echo "$diff  ";
+    if ($diff > 30) {
+        $sorted = false;
+        shuffle($array7);
+    }
+} while (!$sorted);
+sort($array8);
+rsort($array9);
+$array8[] = $biggest;
+foreach ($array9 as $value) {
+    $array8[] = $value;
+}
+print_r($array8);
+
+
+////
+$pirmaPuse=0;
+$antraPuse=0;
+$pirminisMasyvas=[];
+$counter=0;
+//generuoja skaiciu masyva
+do{
+$random=rand(0,300);
+    if(!in_array($random,$pirminisMasyvas)){
+    $pirminisMasyvas[]=$random;
+    $counter++;}
+}
+while($counter<101);
+//suranda didziausia skaiciu reiksme issaugo ir istrina is masyvo
+$didziausiasSkaicius=max($pirminisMasyvas);
+$indexOfMax=(array_search(max($pirminisMasyvas), $pirminisMasyvas));
+unset($pirminisMasyvas[$indexOfMax]);
+//tikrina ar masyvo skaiciai iki vidurinio is abieu pusiu nesiskiria per 30 , jai skirias sumaiso masyva. 
+do{
+    shuffle($pirminisMasyvas);
+foreach ($pirminisMasyvas as $key => $value) {
+    if($key<50){
+        $pirmaPuse+=$value;
+    }
+    else{
+        $antraPuse+=$value;
+    }
+}
+}
+while($pirmaPuse-$antraPuse>30);
+//dalinam masyva
+$masyvasPoPadalinimo=array_chunk($pirminisMasyvas,50);
+ 
+sort($masyvasPoPadalinimo[0]);
+rsort($masyvasPoPadalinimo[1]);
+//jungiam masyva
+array_push($masyvasPoPadalinimo[0],$didziausiasSkaicius);
+$sujungtasMasyvas=array_merge($masyvasPoPadalinimo[0],$masyvasPoPadalinimo[1]);
+ 
+print_r( $sujungtasMasyvas);
+/////////
 
 ?>

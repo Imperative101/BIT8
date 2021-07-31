@@ -1,0 +1,426 @@
+/*
+h1 {
+    color: blue;
+  }
+
+
+
+ Selects all <p> tags 
+p {
+}
+
+
+
+.calendar-cell {
+    color: #fff;
+  }
+
+  
+
+#job-title {
+    font-weight: bold;
+  }
+
+
+  
+ Selects all elements with class="column" 
+.column {
+}
+ 
+
+
+ Selects element with id="first-item" 
+}
+
+
+
+h1#header {
+    color: blue;
+  } 
+   
+  h1 {
+    color: red;
+  } 
+
+
+
+Select h3 elements with the section-heading class 
+h3.section-heading {
+    color: blue;
+  }
+   
+
+Select elements with the section-heading and button class 
+.section-heading.button {
+cursor: pointer;
+  }
+
+
+
+div p { }
+section ol li { }
+h1, h2 {
+    color: red;
+  }
+
+
+
+CSS declaration format:
+property-name: value;
+
+ 
+
+CSS declarations 
+text-align: center;
+color: purple;
+width: 100px;
+
+
+
+font-size: 30px;
+background-color: blue;
+
+#column-one {
+  width: 200px !important;
+}
+ 
+
+
+.post-title {
+  color: blue !important;
+}
+The CSS !important rule is used on declarations to override any other declarations for a property and ignore selector specificity. !important rules will ensure that a specific declaration always applies to the matched elements. However, generally it is good to avoid using !important as bad practice.
+
+
+
+ The vertical margins will collapse to 30 pixels
+instead of adding to 50 pixels. 
+.block-one {
+margin: 20px;
+  }
+   
+.block-two {
+margin: 30px;
+}
+
+
+
+div {
+margin: auto;
+}
+
+
+The value auto can be used with the property margin to horizontally center an element within its container. The margin property will take the width of the element and will split the rest of the space equally between the left and right margins.
+
+
+Any element with class "column" will be at most 200 pixels wide, despite the width property value of 500 pixels. 
+ 
+.column {
+    max-width: 200px;
+    width: 500px;
+  }
+
+
+  .invisible-elements {
+  visibility: hidden;
+}
+The visibility Property
+The CSS visibility property is used to render hidden objects invisible to the user, without removing them from the page. This ensures that the page structure and organization remain unchanged.
+
+
+
+.container {
+  box-sizing: border-box;
+}
+The CSS box model is a box that wraps around an HTML element and controls the design and layout. The property box-sizing controls which aspect of the box is determined by the height and width properties. The default value of this property is content-box, which renders the actual size of the element including the content box; but not the paddings and borders. The value border-box, on the other hand, renders the actual size of an element including the content box, paddings, and borders.
+
+#box-example {
+  box-sizing: border-box;
+}
+CSS box-sizing: border-box
+The value border-box of the box-sizing property for an element corresponds directly to the element’s total rendered size, including padding and border with the height and width properties.
+
+The default value of the border-box property is content-box. The value border-box is recommended when it is necessary to resize the padding and border but not just the content. For instance, the value border-box calculates an element’s height as follows: height = content height + padding + border.
+
+
+
+
+INTERMEDIATE CSS
+
+
+CSS Margin Collapse
+CSS margin collapse occurs when the top and bottom margins of blocks are combined into a single 
+margin equal to the largest individual block margin.
+
+Margin collapse only occurs with vertical margins, not for horizontal margins.
+
+.block-one {
+  margin: 20px;
+}
+ 
+.block-two {
+  margin: 30px;
+}
+
+
+CSS auto keyword
+The value auto can be used with the property margin to horizontally center an element within its container. 
+The margin property will take the width of the element and will split the rest of the space equally between the left and right margins.
+
+div {
+  margin: auto;
+}
+
+Dealing with overflow
+If content is too large for its container, the CSS overflow property will determine how the browser handles the problem.
+
+By default, it will be set to visible and the content will take up extra space. 
+It can also be set to hidden, or to scroll, which will make the overflowing content accessible via scroll bars within the original container.
+
+small-block {
+  overflow: scroll;
+}
+
+
+Height and Width Maximums/Minimums
+The CSS min-width and min-height properties can be used to set a minimum width and minimum height of an element’s box. 
+CSS max-width and max-height properties can be used to set maximum widths and heights for element boxes.
+
+Any element with class "column" will be at most 200 pixels wide, despite the width property value of 500 pixels. 
+ 
+.column {
+    max-width: 200px;
+    width: 500px;
+  }
+
+
+
+The visibility Property
+The CSS visibility property is used to render hidden objects invisible to the user, without removing them from the page. 
+This ensures that the page structure and organization remain unchanged.
+
+.invisible-elements {
+  visibility: hidden;
+}
+
+
+The property box-sizing of CSS box model
+The CSS box model is a box that wraps around an HTML element and controls the design and layout. 
+The property box-sizing controls which aspect of the box is determined by the height and width properties. 
+The default value of this property is content-box, which renders the actual size of the element including the content box; but not the paddings and borders. 
+The value border-box, on the other hand, renders the actual size of an element including the content box, paddings, and borders.
+
+.container {
+  box-sizing: border-box;
+}
+
+CSS box-sizing: border-box
+The value border-box of the box-sizing property for an element corresponds directly to the element’s total rendered size, including padding and border with the height and width properties.
+
+#box-example {
+  box-sizing: border-box;
+}
+
+
+CSS z-index property
+The CSS z-index property specifies how far back or how far forward an element will appear on a web page when it overlaps other elements.
+
+The z-index property uses integer values, which can be positive or negative values. 
+The element with the highest z-index value will be at the foreground, while the element with the lowest z-index value will be at the back.
+
+.element1 {
+  position: absolute;
+  z-index: 1;
+}
+ 
+.element2 {
+  position: absolute;
+  z-index: -1;
+}
+
+
+Fixed CSS Positioning
+Positioning in CSS provides designers and developers options for positioning HTML elements on a web page. 
+The CSS position can be set to static, relative, absolute or fixed. When the CSS position has a value of fixed, it is set/pinned to a specific spot on a page. 
+The fixed element stays the same regardless of scrolling. The navigation bar is a great example of an element that is often set to position:fixed;, enabling the user to scroll through the web page and still access the navigation bar.
+
+navbar {
+postion : fixed;
+ }
+
+
+
+CSS display property
+The CSS display property determines the type of render block for an element. The most common values for this property are block, inline, and inline-block.
+Block-level elements take up the full width of their container with line breaks before and after, and can have their height and width manually adjusted.
+Inline elements take up as little space as possible, flow horizontally, and cannot have their width or height manually adjusted.
+Inline-block elements can appear next to each other, and can have their width and height manually adjusted.
+
+.container1 {
+  display: block;
+}
+ 
+.container2 {
+  display: inline;
+}
+ 
+.container3 {
+  display: inline-block;
+}
+
+
+CSS position: absolute
+The value absolute for the CSS property position enables an element to ignore sibling elements and instead be positioned relative to its closest parent element that is positioned with relative or absolute. 
+The absolute value removes an element entirely from the document flow. By using the positioning attributes top, left, bottom and right, an element can be positioned anywhere as expected.
+
+.element {
+  position: absolute;
+}
+
+
+CSS position: relative
+The value relative of the CSS position property enables an element to be positioned relative to where it would have originally been on a web page. 
+The offset properties can be used to determine the actual position of the element relative to its original position.
+
+
+.element {
+  position: relative;
+}
+
+
+
+CSS z-index property
+The CSS z-index property specifies how far back or how far forward an element will appear on a web page when it overlaps other elements.
+
+The z-index property uses integer values, which can be positive or negative values. The element with the highest z-index value will be at the foreground, while the element with the lowest z-index value will be at the back.
+
+//`element1` will overlap `element2`
+.element1 {
+  position: absolute;
+  z-index: 1;
+}
+ 
+.element2 {
+  position: absolute;
+  z-index: -1;
+}
+Fixed CSS Positioning
+Positioning in CSS provides designers and developers options for positioning HTML elements on a web page. The CSS position can be set to static, relative, absolute or fixed. When the CSS position has a value of fixed, it is set/pinned to a specific spot on a page. The fixed element stays the same regardless of scrolling. The navigation bar is a great example of an element that is often set to position:fixed;, enabling the user to scroll through the web page and still access the navigation bar.
+
+navbar {
+postion : fixed;
+ }
+CSS display property
+The CSS display property determines the type of render block for an element. The most common values for this property are block, inline, and inline-block.
+
+Block-level elements take up the full width of their container with line breaks before and after, and can have their height and width manually adjusted.
+
+Inline elements take up as little space as possible, flow horizontally, and cannot have their width or height manually adjusted.
+
+Inline-block elements can appear next to each other, and can have their width and height manually adjusted.
+
+.container1 {
+  display: block;
+}
+ 
+.container2 {
+  display: inline;
+}
+ 
+.container3 {
+  display: inline-block;
+}
+CSS position: absolute
+The value absolute for the CSS property position enables an element to ignore sibling elements and instead be positioned relative to its closest parent element that is positioned with relative or absolute. The absolute value removes an element entirely from the document flow. By using the positioning attributes top, left, bottom and right, an element can be positioned anywhere as expected.
+
+.element {
+  position: absolute;
+}
+CSS position: relative
+The value relative of the CSS position property enables an element to be positioned relative to where it would have originally been on a web page. The offset properties can be used to determine the actual position of the element relative to its original position. Without the offset properties, this declaration will have no effect on its positioning, it will act as the default value static of the position property.
+
+.element {
+  position: relative;
+}
+CSS float property
+The CSS float property determines how far left or how far right an element should float within its parent element. The value left floats an element to the left side of its container and the value right floats an element to the right side of its container. For the property float, the width of the container must be specified or the element will assume the full width of its containing element.
+
+The content will float to the left side of the container. 
+.left {
+    float: left;
+  }
+   
+   The content will float to the right side of the container. 
+  .right {
+    float: right;
+  }
+
+
+CSS z-index property
+The CSS z-index property specifies how far back or how far forward an element will appear on a web page when it overlaps other elements.
+
+The z-index property uses integer values, which can be positive or negative values. The element with the highest z-index value will be at the foreground, while the element with the lowest z-index value will be at the back.
+
+//`element1` will overlap `element2`
+.element1 {
+  position: absolute;
+  z-index: 1;
+}
+ 
+.element2 {
+  position: absolute;
+  z-index: -1;
+}
+Fixed CSS Positioning
+Positioning in CSS provides designers and developers options for positioning HTML elements on a web page. The CSS position can be set to static, relative, absolute or fixed. When the CSS position has a value of fixed, it is set/pinned to a specific spot on a page. The fixed element stays the same regardless of scrolling. The navigation bar is a great example of an element that is often set to position:fixed;, enabling the user to scroll through the web page and still access the navigation bar.
+
+navbar {
+postion : fixed;
+ }
+CSS display property
+The CSS display property determines the type of render block for an element. The most common values for this property are block, inline, and inline-block.
+
+Block-level elements take up the full width of their container with line breaks before and after, and can have their height and width manually adjusted.
+
+Inline elements take up as little space as possible, flow horizontally, and cannot have their width or height manually adjusted.
+
+Inline-block elements can appear next to each other, and can have their width and height manually adjusted.
+
+.container1 {
+  display: block;
+}
+ 
+.container2 {
+  display: inline;
+}
+ 
+.container3 {
+  display: inline-block;
+}
+CSS position: absolute
+The value absolute for the CSS property position enables an element to ignore sibling elements and instead be positioned relative to its closest parent element that is positioned with relative or absolute. The absolute value removes an element entirely from the document flow. By using the positioning attributes top, left, bottom and right, an element can be positioned anywhere as expected.
+
+.element {
+  position: absolute;
+}
+CSS position: relative
+The value relative of the CSS position property enables an element to be positioned relative to where it would have originally been on a web page. The offset properties can be used to determine the actual position of the element relative to its original position. Without the offset properties, this declaration will have no effect on its positioning, it will act as the default value static of the position property.
+
+.element {
+  position: relative;
+}
+CSS float property
+The CSS float property determines how far left or how far right an element should float within its parent element. The value left floats an element to the left side of its container and the value right floats an element to the right side of its container. For the property float, the width of the container must be specified or the element will assume the full width of its containing element.
+
+ The content will float to the left side of the container. 
+.left {
+    float: left;
+  }
+   
+   The content will float to the right side of the container. 
+  .right {
+    float: right;
+  }
+  The CSS clear property
+  The CSS clear property specifies how an element should behave when it bumps into another element within the same containing element.The clear is usually used in combination with elements having the CSS float property. This determines on which sides floating elements are allowed to float.
+*/
