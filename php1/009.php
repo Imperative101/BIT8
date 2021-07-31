@@ -29,8 +29,8 @@ for($i = 0; $i<10; $i++){
 
 
 $arrs=array(
-    array(???),
-    array(????),
+//    array(??)),
+//    array(??),
     );
  
 for($i = 0; $i<10; $i++){
