@@ -19,6 +19,304 @@ npm i concurrently --save
 
 
 
+REACT NATIVE
+
+1. Entry Point
+
+import * as React from 'react';
+const App = () => (
+  // All functionality goes here
+);
+export default App;
+
+2. Packages
+
+import { Camera } from 'expo-camera';
+import { MapView } from 'react-native-maps';
+
+3. Core Components
+
+<ScrollView>
+  <Text>Some text</Text>
+  <View>
+    <Text>Some more text</Text>
+    <Image
+      source={{
+        uri: 'https://picsum.photos/64/64',
+      }}
+    />
+  </View>
+  <TextInput
+    defaultValue="You can type here"
+  />
+  <Button
+    onPress={() => {
+      alert('You tapped the button!');
+    }}
+    title="Press Me"
+  />
+</ScrollView>
+
+4. Importing Core Components
+
+import { View, Text } from 'react-native';
+
+5.  Core Components Optional Functionality
+
+function App() {
+  return (
+    {/* Text components can be with `numberofLines` prop */}
+    <Text numberOfLines={1}>
+      quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit
+    </Text>
+  );
+}
+
+6. Core Components Optional Functionality
+
+function App() {
+  return (
+    {/* Text components can be with `numberofLines` prop */}
+    <Text numberOfLines={1}>
+      quam elementum pulvinar etiam non quam lacus suspendisse faucibus interdum posuere lorem ipsum dolor sit
+    </Text>
+  );
+}
+
+7. <View> Component
+
+function App() {
+  return (
+    {/* Base layout structure */}
+    <View style={{ flex: 1 }}>
+      {/* Simple background color */}
+      <View style={{ padding: 8, color: 'red' }}>
+        <Text>Text with background color</Text>
+      </View>
+      {/* Space layout structure */}
+      <View style={{ margin: 16 }} />
+    </View>
+  );
+}
+
+8.  <ScrollView> Component
+
+function App() {
+  return (
+    <ScrollView>
+      <Text style={{ margin: 16 }}>Scroll here to see more!</Text>
+      <View style={{ marginTop: 1024 }} />
+      <Text style={{ margin: 16 }}>Made you look!</Text>
+    </ScrollView>
+  );
+}
+
+9. text
+
+<Text style={{ height: 40, borderWidth: 1 }}>
+  Here's some text!
+</Text>
+
+10. Image
+
+<Image source={require('./local/asset.jpg')} />
+<Image source={{ uri: 'https://docs.expo.io/static/images/header/sdk.svg' }} />
+<Image source={{ uri: 'data:image/png;base64,<base64-string>=' }} />
+
+
+11. Text input component
+
+const [input, setInput] = useState('');  
+ 
+// example use of input
+console.log(input);  
+ 
+return (
+  <TextInput   
+    placeholder="What is your name?"   
+    onChangeText={setInput}  
+  />
+);
+
+12. Business-Logic Focused Components
+
+function ReadMoreParagraph(props) {
+  const [isOpen, setOpen] = useState(false);
+ 
+  return (
+    <View style={{ flex: 1, flexDirection: 'column' }}>
+      <Text style={{ fontSize: 16 }} numberOfLines={!isOpen ? 2 : undefined}>
+        {props.children}
+      </Text>
+      {!isOpen
+        ? <Button title='Read More' onPress={() => setOpen(true)} />
+        : <Button title='Read Less' onPress={() => setOpen(false)} />
+    </View>
+  )
+}
+
+13. StyleSheet
+
+import { StyleSheet } from 'react-native';
+ 
+const styles = StyleSheet.create({
+  paragraph: {
+    fontSize: 16,
+  },
+  label: {
+    fontSize: 11,   
+    textTransform: 'uppercase'
+  }
+});
+ 
+<Text style={styles.paragraph}>My paragraph</Text>
+<Text style={styles.label}>My label</Text>
+
+14. Using stylesheet definitions
+
+// Using inline styling
+const AwesomeBox = () => (
+  <View style={{ width: 100, height: 100, backgroundColor: 'red' }} />
+);
+ 
+// Using the StyleSheet API
+const AwesomeBox = () => (
+  <View style={styles.box} />
+);
+ 
+const styles = StyleSheet.create({
+  box: {
+    width: 100,
+    height: 100,
+    backgroundColor: 'red'
+  },
+});
+
+15. Dynamic Styling
+
+
+// Applies the `selected` style on top of the `paragraph` style if props.isActive is truthy
+ 
+function Item(props) {
+  return (
+    <Text style={[styles.paragraph, props.isActive && styles.selected]} />
+  );
+}
+
+16. 
+
+Flex in React Native
+Layouts are defined with Flex-like rules to account for a wide variety of screen sizes. The major difference between Flex on web and Flex in React Native is that a parent element with display: flex is not required.
+
+<View style={{ flexDirection: 'row' }}>
+  <View style={{ flex: 1 }} />
+  <View style={{ flex: 1 }} />
+  <View style={{ flex: 1 }} />
+</View>
+flexDirection
+The flexDirection style property determines the direction and order in which child elements are laid out, which could be row, row-reverse, column, or column-reverse.
+
+<View style={{ flexDirection: 'row' }}>
+  <View style={{ flex: 1 }} />
+  <View style={{ flex: 1 }} />
+  <View style={{ flex: 1 }} />
+</View>
+justifyContent
+The justifyContent style property determines how child elements are positioned in the parent container, which could be center, flex-start, flex-end, space-around, space-between, or space-evenly.
+
+<View style={{ flexDirection: 'row' , justifyContent: 'flex-start' }}>
+  <View style={{ flex: 1 }} />
+  <View style={{ flex: 1 }} />
+  <View style={{ flex: 1 }} />
+</View>
+Dimensions in React Native
+All dimensions are unitless by default, and represent density-independent pixels.
+
+<View style={{ width: 50, height: 50, backgroundColor: 'powderblue' }} />
+
+
+17. 
+
+
+Stack Navigation
+In the stack navigation pattern, a user has to go from screen to screen to navigate through all screens, where each one is pushed on a stack. The only UI rendered is a header with the screen title and a back button.
+
+Feed page with button to go to Catalog
+Tab Navigation
+In the tab navigation pattern, a user uses a tab bar to switch between screens.
+
+Feed page with four tabs at the bottom
+Drawer Navigation
+In the drawer navigation pattern, a user uses a pane that can be opened by either swiping or tapping a button, which provides a menu where users can switch between screens.
+
+Feed page with at pull-out menu from the right side of the screen
+NavigationContainer Component
+In the react-navigation library, components to be organized must be wrapped in a NavigationContainer component since it keeps track of the navigation structure and makes sure the navigators can operate.
+
+import { NavigationContainer } from '@react-navigation/native';
+ 
+const App = () => (
+  <NavigationContainer>
+    { /* Insert your navigators and content here */ }
+  </NavigationContainer>
+);
+createStackNavigator Factory Method
+In the react-navigation library, the stack navigator is created by the createStackNavigator factory method.
+
+const Stack = createStackNavigator();
+ 
+<Stack.Navigator>
+  <Stack.Screen name="Feed" component={FeedScreen} />
+  <Stack.Screen name="Catalog" component={CatalogScreen} />
+</Stack.Navigator>
+createBottomTabNavigator Factory Method
+In the react-navigation library, the bottom tab navigator is created by the createBottomTabNavigator factory method.
+
+const Tab = createBottomTabNavigator();
+ 
+<Tab.Navigator>
+  <Tab.Screen name="Feed" component={FeedScreen} />
+  <Tab.Screen name="Catalog" component={CatalogScreen} />
+</Tab.Navigator>
+useNavigation Hook
+In the react-navigation library, the useNavigation hook provides access to the navigation API and can be used to move users to different screens. It returns an object which is also passed as a navigation prop to screens and has multiple methods, including navigate (takes a screen name argument) and goBack.
+
+// Using properties, only available in screen components
+const FeedScreen = (props) => {
+  const nav = props.navigation;
+ 
+  return (
+    <Button
+      title="Go to home"
+      onPress={() => nav.navigate('Home')}
+    />
+  );
+};
+ 
+// Using the hook, available in all components
+const HomeButton = () => {
+  const nav = useNavigation();
+ 
+  return (
+    <Button
+      title="Go to home"
+      onPress={() => nav.navigate('Home')}
+    />
+  );
+};
+Factory Methods
+In the react-navigation library, all navigators are created by factory methods that use a naming pattern like create<type>Navigator(), which returns an object with Navigator and Screen properties. These properties are unique components that you must use when rendering the navigation structure.
+
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
+ 
+// You can replace Tab with any other factory method result.
+<Tab.Navigator>
+  <Tab.Screen name="Feed" component={FeedScreen} />
+  <Tab.Screen name="Catalog" component={CatalogScreen} />
+</Tab.Navigator>
+
+
 
 
 
