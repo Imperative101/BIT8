@@ -372,9 +372,54 @@ for($i=0; $i<100; $i++){
 echo "<br>";
 print_r($rndNums);
 
-//8 Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 6 uždavinio masyvuose.
+//8 Sugeneruokite masyvą iš elementų, kurie kartojasi abiejuose 6 uždavinio masyvuose.\
 
-//9 Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 6 uždavinio masyvo reikšmės, o jo reikšmės iš būtų antrojo masyvo.
+
+$rndNums=[];
+$rndNums2=[];
+$mergedarr=[];
+$word="";
+$rand=rand(100,999);
+for($i=0; $i<100; $i++){
+    if (!in_array($rand, $rndNums)) { 
+       array_push($rndNums, rand(100,999));
+} 
+if (!in_array($rand, $rndNums2)) { 
+   array_push($rndNums2, rand(100,999));
+} 
+
+
+}
+echo "<br>";
+print_r(array_merge($rndNums, $rndNums2));
+
+
+
+
+//9 Sugeneruokite masyvą, kurio indeksus sudarytų pirmo 6 uždavinio masyvo reikšmės, 
+// o jo reikšmės iš būtų antrojo masyvo.
+
+
+
+$rndNums=[];
+$rndNums2=[];
+$mergedarr=[];
+$word="";
+$rand=rand(100,999);
+for($i=0; $i<100; $i++){
+    if (!in_array($rand, $rndNums)) { 
+       array_push($rndNums, rand(100,999));
+} 
+if (!in_array($rand, $rndNums2)) { 
+   array_push($rndNums2, rand(100,999));
+} 
+
+}
+echo "<br>";
+print_r(array_keys($rndNums));
+echo "<br>";
+print_r(array_keys($rndNums2));
+
 
 
 //10 Sugeneruokite 10 skaičių masyvą pagal taisyklę: Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25.
