@@ -88,7 +88,6 @@ function array_icount_values($array,$lower=true) {
 //panaudokite kaip reikšmes sukuriant naują masyvą. T.y. pirma naujo masyvo reikšmė turi būti lygi mažesnio masyvo, turinčio indeksą 0 dideliame masyve, visų elementų sumai 
 
 
-// начинай сразу с 3
 //3 Sukurkite masyvą iš 10 elementų. Kiekvienas masyvo elementas turi būti masyvas 
 //su atsitiktiniu kiekiu nuo 2 iki 20 elementų. 
 
@@ -99,12 +98,9 @@ for($i = 0; $i < 10; $i++){
         $randomele5[] = rand(2,20);
     }
     foreach ($masyvas3 as $key => $value) {
-        // get all the keys in $slug array
         $slug[] = $value['slug'];
-        // get all the values in $title array
         $title[] = $value['title'];
       }
-      // finally combine and get your required array
       $required_array = array_combine($slug, $title);
 }
 
@@ -124,7 +120,7 @@ for($i = 0; $i < 10; $i++){
     $randomele5 = []; 
 }
 
-$keys = array_column($info, 'place_in_row');
+$keys = array_column($masyvas10, 'place_in_row');
     array_multisort($keys, SORT_DESC, $info);
 
 

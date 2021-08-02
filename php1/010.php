@@ -83,6 +83,41 @@ echo "<br>Unikalios, nepasikartojančios reikšmės: ".$count;
 //print_r($mergedarr);
 //$unique = array_unique($mergedarr);
 //$dupes = array_diff_key($mergedarr,$unique);
+// 08.02.2021
+// 3uzd
+
+$letters = ["A","B","C","D",];
+$arr = [];
+$arr2 = [];
+$arr3 = [];
+
+for($i=0;$i <200; $i++){
+$arr[]= $letters[rand(0, count($letters)-1)];
+$arr2[]= $letters[rand(0, count($letters)-1)];
+$arr3[]= $letters[rand(0, count($letters)-1)];
+echo "A" < "B";
+//4
+for($i=0; $i < count($arr); $i++) { //i=0
+    for ($a = $i; $a < count($arr); $a++) { //a=1 a=2
+        if($arr[$i] < $arr[$a]) {
+            $tmp = $arr[$i];
+            $arr[$i] = $arr[$a];
+            $arr[$a] = $tmp;
+        }
+    }
+}
+print_r($arr);
+}
+
+$arr4 = [];
+for ($i=0; $i < count($arr1); $i++) {
+    $arr4[] = $arr[$i].$$arr2[$i].$arr3[$i];
+}
+print_r($arr4);
+
+for ($i=0; $i < count($arr4); $i++) {
+    
+}
 
 
 ?>
