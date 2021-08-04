@@ -422,10 +422,37 @@ print_r(array_keys($rndNums2));
 
 
 
-//10 Sugeneruokite 10 skaičių masyvą pagal taisyklę: Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25.
-// Trečias, pirmo ir antro suma. Ketvirtas- antro ir trečio suma. Penktas trečio ir ketvirto suma ir t.t.
+//10. Sugeneruokite 10 skaičių masyvą pagal taisyklę: 
+//Du pirmi skaičiai- atsitiktiniai nuo 5 iki 25. 
+//Trečias, pirmo ir antro suma. 
+//Ketvirtas- antro ir trečio suma. 
+//Penktas trečio ir ketvirto suma ir t.t
+	
+
+$count=0;
+$masyvas1= array(0,1,2,3,4,5,6,7,8,9);
+for($i=0; $i < 10; $i++) {
+    $masyvas1[$i] = rand(5,25);
+    $rand_keys = array_rand($input, 0,2);
+}
+echo"<br>";
+echo $input[$rand_keys[0]] . "\n";
+echo $input[$rand_keys[1]] . "\n";
+
+$a=array(0,1);
+echo array_sum($a);
+$a=array(1,2);
+echo array_sum($a);
+$a=array(2,3);
+echo array_sum($a);
 
 
+
+$cars=array("Volvo","BMW","Toyota");
+echo $array[0] . ", " . $cars[1] . " and " . $cars[2] . ".";
+
+
+//  print_r($?????????????????????????); 
 
 
 

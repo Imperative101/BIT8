@@ -116,8 +116,12 @@ for ($i=0; $i < count($arr1); $i++) {
 print_r($arr4);
 
 for ($i=0; $i < count($arr4); $i++) {
-    
+    $arr6[$arr4[$i]] = $arr4[$i];
 }
+echo "<hr>";
+print_r($arr5);
+
+// 6
 
 
 ?>
