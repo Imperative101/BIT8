@@ -7,9 +7,9 @@
 //    $key = rand(20,40);
 //    $masyvas [] = $key;
 //}
-//foreach (range(0,29) as $value) {
-//    $masyvas [] = rand(20,40);
-//}
+foreach (range(0,29) as $value) {
+        $masyvas [] = rand(20,40);
+}
 
 for ($i=0; $i < 30; $i++) { 
     $masyvas [] = rand(20,40);
@@ -153,7 +153,7 @@ $gyvūnas['description']='big'; 'small'; 'thin'; 'fat'; 'noize';
 
 $names = ["vardas1","vardas2","vardas3","vardas4","vardas5","vardas6","vardas7","vardas8","vardas9","vardas10"]
 $species = ["kangaroo","gazele","lion","parrot","hawk","kong","eagle","pantera","crock","frogg"]
-$descriptions = ["gražus bet piktas","pastoviai miega","šauniai maskuojasi","","","","","","","",]
+$descriptions = ["gražus bet piktas","pastoviai miega","šauniai maskuojasi","greitai skrenda","didesnis nei liutas","greitai skrenda","greitesne is gyvynu","agresyvesnis is gyvunu","ilgas liezuvis"]
 
 //        5b. sukurkite dvimatį masyvą iš 20 elementų.  didžiąjame masyve bus sudėti mažesni masyvai,
 //         iš eilės. maži masyvai bus tokie patys kaip 4. užduotyje. jų reikšmes užpildykite 5. 
@@ -163,47 +163,31 @@ $descriptions = ["gražus bet piktas","pastoviai miega","šauniai maskuojasi",""
 
 
     $multmassive = [
-        '1' => ['species' => lion, 'height' => 180],
-        '2' => ['species' => lion],
-        '3' => ['species' => lion],
-        '4' => ['species' => lion],
-        '5' => ['species' => lion],
-        '6' => ['age' => 7],
-        '7' => ['age' => 7],
-        '8' => ['age' => 7],
-        '9' => ['age' => 7],
-        '10' => ['age' => 7],
-        '11' => ['name'=> neo],
-        '12' => ['name'=> neo],
-        '13' => ['name'=> neo],
-        '14' => ['name'=> neo],
-        '15' => ['name'=> neo],
-        '16' => ['description'=>hawk],
-        '17' => ['description'=>hawk],
-        '18' => ['description'=>hawk],
-        '19' => ['description'=>hawk],
-        '20' => ['description'=>hawk]
+        '1' => ['species' => lion, 'age' => 7, 'name'=> leo, 'description'=>'big'],
+        '2' => ['species' => tiger, 'age' => 10, 'name'=> tyge, 'description'=> 'small'],
+        '3' => ['species' => turtle, 'age' => 5, 'name'=> turt, 'description'=>'thin'],
+        '4' => ['species' => fox, 'age' => 14, 'name'=> fx, 'description'=>'fat'],
+        '5' => ['species' => wolf, 'age' => 16, 'name'=> wf, 'description'=>'noize'],
 
     ];
-    echo $multmassive['1']['2'] ."<br>";
+// priskirimas ?
+    foreach ($multmassive as $i){
+        $multmassive[$i]=rand($species); /// ???
+    }
+        foreach($multmassive as $value){
+        echo  $value ." ";
+        
+        }
 
+    echo $names[] ."<br>";
+    echo $species []."<br>";
+    echo $descriptions[] ."<br>";
 
-
-
-    $newmassive = array
-    (
-    array("Volvo",22,18),
-    array("BMW",15,13),
-    array("Saab",5,2),
-    array("Land Rover",17,15)
-    );
-    
-  echo $cars[0][0].": In stock: ".$cars[0][1].", sold: ".$cars[0][2].".<br>";
-  echo $cars[1][0].": In stock: ".$cars[1][1].", sold: ".$cars[1][2].".<br>";
-  echo $cars[2][0].": In stock: ".$cars[2][1].", sold: ".$cars[2][2].".<br>";
-  echo $cars[3][0].": In stock: ".$cars[3][1].", sold: ".$cars[3][2].".<br>";
-
-
+    echo $multmassive['1']['2']['3']['4'] ."<br>";
+    echo $multmassive['5']['6']['7']['8'] ."<br>";
+    echo $multmassive['9']['10']['11']['12'] ."<br>";
+    echo $multmassive['13']['14']['15']['16'] ."<br>";
+    echo $multmassive['17']['18']['19']['20'] ."<br>";
 
 
 
@@ -237,25 +221,79 @@ $descriptions = ["gražus bet piktas","pastoviai miega","šauniai maskuojasi",""
 
 
 
-  /*funkcijos
-  =======================
+//  funkcijos
 
-  1. sukurkite funkciją kuri išspausdina kokį nors tekstą.
-  1b. sukurkite funkciją kuri priima vieną parametrą ir išspausdina tekstas "labas" +
-   tas paduotas kintamasis
+//  1. sukurkite funkciją kuri išspausdina kokį nors tekstą.
 
-  1c. sukurkite funkciją kuri gražina skaičiaus PI pirmus 8 skaičius
 
-  1d. sukurkite funkciją kuri gražina dviejų parametrų sąndaugą.
+function message() {
+echo "hello world!";
+    }
+message(); // call the function
 
-  1e. sukurkite funkciją kuri apskaičiuoja skritulio PLOTĄ. ši funkcija priima 1 parametrą
-  bei naudoja 1c. funkciją savo viduje, kad gautų PI reikšmę.
-  1f. sukurkite funkciją kuri apskaičiuoja skritulio ILGĮ. ši funkcija priima 1 parametrą
-  bei naudoja 1c. funkciją savo viduje, kad gautų PI reikšmę.
-  1g. sukurkite funkciją kuri: priima vieną parametrą. savyje iškviecia 1e ir 1f funkcijas
-  ir atspausdina:
-   apskritimo ilgis: (tai ka gražino funkcija 1f)
-   apskritimo plotas: (tai ka gražino funkcija 1g) */
+ // 1b. sukurkite funkciją kuri priima vieną parametrą ir išspausdina tekstas "labas" +
+ //  tas paduotas kintamasis
+
+    function add1() {
+        return labas;
+    }
+    echo " labas ".add1();
+
+     function sveikinimas()
+{
+    return (labas);
+}
+list ($zodis) = sveikinimas();
+
+ // 1c. sukurkite funkciją kuri gražina skaičiaus PI pirmus 8 skaičius
+
+ // 1d. sukurkite funkciją kuri gražina dviejų parametrų sąndaugą.
+
+    function add2($x,$y) {
+        return $x + $y;
+        $z = $x + $y;
+    }
+    echo $z;
+
+  function add1($x) {
+  return $x + 1;
+}
+echo "5 + 1 is " . add1(5);
+
+
+function addNumbers(int $a, int $b) {
+  return $a + $b;
+}
+echo addNumbers(5, "5 days");
+
+//  1e. sukurkite funkciją kuri apskaičiuoja skritulio PLOTĄ. ši funkcija priima 1 parametrą
+
+$diameter = 8;
+$pi = 3.14;
+$title="Circle";
+function circleArea($diameter,$pi) {
+    $area = $diameter * $pi;
+    return $area;
+}
+echo circleArea($diameter, $pi);
+
+
+//  bei naudoja 1c. funkciją savo viduje, kad gautų PI reikšmę.
+//  1f. sukurkite funkciją kuri apskaičiuoja skritulio ILGĮ. ši funkcija priima 1 parametrą
+//  bei naudoja 1c. funkciją savo viduje, kad gautų PI reikšmę.
+
+$pi = 3.14;
+$diameter = 8;
+$radius = 4;
+function circle($pi, $diameter, $radius) {
+$c = 2 * $pi * $radius;
+return $c;
+}
+echo length ($c);
+ // 1g. sukurkite funkciją kuri: priima vieną parametrą. savyje iškviecia 1e ir 1f funkcijas
+ // ir atspausdina:
+ //  apskritimo ilgis: (tai ka gražino funkcija 1f)
+  // apskritimo plotas: (tai ka gražino funkcija 1g) 
 
 
   ?>
