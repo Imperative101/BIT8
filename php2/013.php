@@ -188,16 +188,24 @@ function sq($a, $b) {
 
 function circleSq($r){
 return myPi() * $r * $r;
-
 }
-
 function circleLength($r) {
 return 2* myPi() * $r;
 }
 echo circleSq(10)."<br>";
 echo circleLength(10)."<br>";
-
+function multiply($a, $b) {
+    return $a * $b;
+}
+function circleArea($r){
+    return myPi()*($r * $r);
+}
+function circleInfo($r){
+    echo "apskritimo ilgis:".circleLength($r)."<br>";
+    echo "apskritimo plotis:".circleArea($r)."<br>";
+}
 #9 
+
 
 
 ?>
