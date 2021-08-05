@@ -151,9 +151,9 @@ $gyvūnas['description']='big'; 'small'; 'thin'; 'fat'; 'noize';
 //        aprašus sugalvokite patys. jų reikia 10.
 
 
-$names = ["vardas1","vardas2","vardas3","vardas4","vardas5","vardas6","vardas7","vardas8","vardas9","vardas10"]
-$species = ["kangaroo","gazele","lion","parrot","hawk","kong","eagle","pantera","crock","frogg"]
-$descriptions = ["gražus bet piktas","pastoviai miega","šauniai maskuojasi","greitai skrenda","didesnis nei liutas","greitai skrenda","greitesne is gyvynu","agresyvesnis is gyvunu","ilgas liezuvis"]
+$names = ["vardas1","vardas2","vardas3","vardas4","va0rdas5","vardas6","vardas7","vardas8","vardas9","vardas10"];
+$species = ["kangaroo","gazele","lion","parrot","hawk","kong","eagle","pantera","crock","frogg"];
+$descriptions = ["gražus bet piktas","pastoviai miega","šauniai maskuojasi","greitai skrenda","didesnis nei liutas","greitai skrenda","greitesne is gyvynu","agresyvesnis is gyvunu","ilgas liezuvis"];
 
 //        5b. sukurkite dvimatį masyvą iš 20 elementų.  didžiąjame masyve bus sudėti mažesni masyvai,
 //         iš eilės. maži masyvai bus tokie patys kaip 4. užduotyje. jų reikšmes užpildykite 5. 
