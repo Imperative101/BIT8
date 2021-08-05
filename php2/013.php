@@ -137,5 +137,67 @@ for($i=0; $i < count($zoo); $i++) {
     echo $zoo[$i]['name']."".$zoo[$i]['species']."".$zoo['age']."".$zoo[$i]['description']."<br>";
 }
 
+#6 daugybos lentele
+
+for ($i=1; $i < 10; $i++) {
+    for ($a=1; $a < 9; $a++) {
+        echo $ $i*$a."";
+    }
+    echo"<br>";
+}
+echo"<hr>";
+
+#7 funkcija priemanti/nepriemanti. grazinanti/ negrazinanti
+
+function message() {
+    echo "hello world!<hr>";
+        }
+    message(); // call the function
+
+function sayHi(){
+    echo"hi<hr>";
+}
+
+sayHiYou("Petras");
+function sayHiYou($name){
+    echo "Labas".$name."<hr>";
+}
+
+echo myPi();
+function myPi (){
+    return 3.1415925;
+}
+
+function firstDgt($pirmi8){
+    $rez = substr("$pirmi8", 0,9);
+    return $rez;
+
+}
+$pi = 3.14159265359;
+$spausdina = firstDgt($pi);
+echo $spausdina;
+
+
+sq(65, 24);
+function sq($a, $b) {
+    return $a * $b;
+}
+
+
+#8 ilgis plotis
+
+function circleSq($r){
+return myPi() * $r * $r;
+
+}
+
+function circleLength($r) {
+return 2* myPi() * $r;
+}
+echo circleSq(10)."<br>";
+echo circleLength(10)."<br>";
+
+#9 
+
 
 ?>
