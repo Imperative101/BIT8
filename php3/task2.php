@@ -16,6 +16,8 @@ $letters = ['A','B','C'];
         </style>
 </head>
 <body style="background-color:black;">
+<?php if($_SERVER['REQUEST_METHOD'] == "GET"){?>
+
 <form action="" method="">
     <?php for ($i=0; $i < rand(3,10); $i++) { ?>
         <label class="lbl" for="a<?=$i?>"><?=$lettes[$i]?></label>
@@ -23,6 +25,6 @@ $letters = ['A','B','C'];
         <input type="checkbox" name="A" id="a<?= $i ?>">
         <?php } ?>
         <br><button type="submit">generate</button>
-    </form>
+    </form> 
 </body>
 </html>
