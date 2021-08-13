@@ -1,6 +1,6 @@
 <?php
 
-
+include('./functions.php');
 
 session_start();
 if( !isset( $_SESSION['zoo'])  ){
@@ -34,7 +34,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && !isset($_POST['id'])){
     $_SESSION['id']++;
     
     $_SESSION['zoo'][] = $animal;
-    header("location:./");
+    header("location:./"); 
     die;
 }
 
@@ -124,7 +124,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['id'])  ){
         </tr>
 
 
-        <?php foreach ($_SESSION['zoo'] as $animal) {  ?>
+        <?php foreach ($_SESSION['zoo'] as $animal) {  ?>  
             <tr>
             <td> <?= $animal['id']  ?> </td>
                 <td> <?= $animal['species']  ?> </td>
