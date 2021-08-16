@@ -1,13 +1,9 @@
 <?php
 
-
-/// уменьшить кол во if и сессий. разобраться с olympics. перепечатывать заново чтобы оно работало. найти в инете справочник по этому
-
-
 include('./functions.php');
-include('./index.php');
 
-session_start();
+
+
 if( !isset( $_SESSION['zoo'])  ){
     $_SESSION['zoo'] = [];
     $_SESSION['id'] = 1;
@@ -23,22 +19,24 @@ if($_SERVER['REQUEST_METHOD'] == "GET" && isset($_GET['id'])){
 }
 
 if($_SERVER['REQUEST_METHOD'] == "POST" && !isset($_POST['id'])){
-    $animal = [];
-    $animal['name'] = $_SESSION['name'];
-    $animal['surname'] = $_POST['surname'];
-    $animal['sport'] = $_POST['sport'];
-    $animal['country'] = $_POST['country'];
-    $animal['gender'] = $_POST['gender'];
-    $animal[' victories'] = $_POST[' victories'];
+    // $animal = [];
+    // $animal['id'] = $_SESSION['id'];
+    // $animal['name'] = $_POST['name'];
+    // $animal['surname'] = $_POST['surname'];
+    // $animal['sport'] = $_POST['sport'];
+    // $animal['country'] = $_POST['country'];
+    // $animal['gender'] = $_POST['gender'];
+    // $animal['victories'] = $_POST['victories'];
 
-    $_SESSION['id']++;
+    // $_SESSION['id']++;
     
-    $_SESSION['zoo'][] = $animal;
+    // $_SESSION['zoo'][] = $animal;
+    store();
     header("location:./"); 
     die;
 }
 
-if($_SERVER['REQUEST_METHOD'] == "POST" && !isset($_POST['species'])){
+if($_SERVER['REQUEST_METHOD'] == "POST" && !isset($_POST['sport'])){
     foreach ($_SESSION['zoo'] as $key => $animal) {
         if($animal['id'] == $_POST['id']){
          unset($_SESSION['zoo'][$key]);
@@ -54,12 +52,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST" && !isset($_POST['species'])){
 if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['id'])  ){
    foreach ($_SESSION['zoo'] as &$animal) {
        if($animal['id'] == $_POST['id']){
-        $animal['name'] = $_SESSION['name'];
+        $animal['id'] = $_SESSION['id'];
+        $animal['name'] = $_POST['name'];
         $animal['surname'] = $_POST['surname'];
         $animal['sport'] = $_POST['sport'];
         $animal['country'] = $_POST['country'];
         $animal['gender'] = $_POST['gender'];
-        $animal[' victories'] = $_POST[' victories'];
+        $animal['victories'] = $_POST['victories'];
         header("location:./");
         die;
        }  
