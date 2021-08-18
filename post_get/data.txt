@@ -1,0 +1,9 @@
+[
+{"id":1,"cars":"1","manufacturer":"Ford Mustang","model":"429", "year":"1969","color":"BLACK","distance":"200","fuel":"diesel"},
+{"id":2,"cars":"2","manufacturer":"Chrysler","model":"Newport", "year":"1961","color":"PURPLE","distance":"250","fuel":"petroleum"},
+{"id":3,"cars":"3","manufacturer":"Volvo","model":"850", "year":"1996","color":"GREEN","distance":"300","fuel":"diesel"},
+{"id":4,"cars":"4","manufacturer":"Ford","model":"GT", "year":"2005","color":"YELLOW","distance":"350","fuel":"gasoline"},
+{"id":5,"cars":"5","manufacturer":"Citroen ","model":"GT", "year":"2008","color":"RED","distance":"400","fuel":"hydrogen fuel"},
+{"id":6,"cars":"6","manufacturer":"BMW","model":"M3 GTR", "year":"1994","color":"BLUE","distance":"450","fuel":"gasoline"}
+]
+
