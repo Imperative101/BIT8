@@ -1,70 +1,83 @@
 <?php
 //
-function connect(){
+function connect()
+{
     return new mysqli("localhost","root","","medelynas");
-   
 }
 
 function find($id){
     $conn = connect();
     $sql = 'SELECT * from `plants` where id ='.$id;
     $result = $conn->query($sql);
-    $conn->close($result->fetch_assoc());
-    die;
+    $conn->close();
     return $result->fetch_assoc();
 }
 function allOld(){
-    $conn = new mysql($servername, $username, $password, $dbname);
-
-    $sql = "SELECT id, firstname, lastname FROM MyGuests";
+    $conn = connect();
+    $sql = "SELECT * from `plants`";
     $result = $conn->query($sql);
+
     $arr = [];
-    while($row = $result->fetch_assoc()){
+    while($row = $result->fetch_assoc()) {
         $plant = [];
         $plant['id'] = $row['id'];
         $plant['is_yearling'] = $row['is_yearling'];
         $plant['quantity'] = $row['quantity'];
         $plant['name'] = $row['name'];
-        $arr[]= $plant;
-     //   echo "<br> id: ". $row["id"]." - Name: ".$row["firstname"]. "". $row["lastname"] ."<br>";
+        $arr[] = $plant;
     }
     $conn->close();
     return $arr;
 }
-
-function all($id){
+function countInstances($id){
     $conn = connect();
-    $sql = "SELECT * from `plants` ";
+    $sql = "SELECT * from `plants` bla bla get all instances where id =".$id;
     $result = $conn->query($sql);
-    $conn->query($sql);
     $conn->close();
+    return $result;
+}
+
+function all(){
+    $conn = connect();
+    $sql = "SELECT `plants`.`id`, `name`, `is_yearling`,
+    (SELECT COUNT(*)
+    FROM `unique_plants`
+    WHERE `unique_plants`.`plant_id` = `plants`.`id`) as 'quantity'
+    FROM `unique_plants` right join `plants`
+    ON `plants`.`id` = `unique_plants`.`plant_id`
+    GROUP by `plants`.`id`;";
+    $result = $conn->query($sql);
+    // var_dump($result);die;
+    $conn->close();
+    return $result;
 }
 
 function store(){
+    $is_yearling = 0;
+    if(isset($_POST['is_yearling'])){
+        $is_yearling = 1;  
+    }
     $conn = connect();
-    $sql = 'INSERT INTO `plants`(`id`,`name`,`is_yearling`,`quantity`) VALUES (NULL,"'.$_POST['name'].' ","'.$_POST['is_yearling'].'","'.$_POST['quantity'].'")';
+    $sql = 'INSERT INTO `plants`(`id`, `name`, `is_yearling`, `quantity`) VALUES (NULL,"'.$_POST['name'].'","'.$is_yearling.'","'.$_POST['quantity'].'")';
     $conn->query($sql);
     $conn->close();
 }
 
-$data = getData();
-$plant['id'] = newId();
-$plant['name'] = $_POST['name'];
-$plant['is_yearling'] = $_POST['is_yearling'];
-$plant['quantity'] = $_POST['quantity'];
-$data[] = $plants;
-setData($data);
 
 function update(){
+    $is_yearling = 0;
+    if(isset($_POST['is_yearling'])){
+        $is_yearling = 1;  
+    }
     $conn = connect();
-    $sql = 'UPDATE `plants`(`id`,`name`,`is_yearling`,`quantity`) VALUES (NULL,"'.$_POST['name'].' ","'.$_POST['is_yearling'].'","'.$_POST['quantity'].'" WHERE id = '.$_POST['id'];
+    $sql = 'UPDATE `plants` SET `name`="'.$_POST['name'].'",`is_yearling`="'. $is_yearling.'" WHERE id = '.$_POST['update'];
     $conn->query($sql);
     $conn->close();
 }
 
 function destroy($id){
     $conn = connect();
-    $sql = "DELETE FROM `plants` WHERE is=".$id;
+    $sql = "DELETE FROM `plants` WHERE id=".$id;
     $conn->query($sql);
     $conn->close();
 }

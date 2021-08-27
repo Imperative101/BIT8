@@ -34,7 +34,7 @@ function store(){
     $sql = "INSERT INTO `unique_plants` (`id`, `age`, `height`, `health`, `plant_id`) 
             VALUES (NULL, '".$_POST['age']."',  '".$_POST['height']."',  '".$_POST['health']."', '".$_POST['plant_id']."');";
   
-//   echo $sql;die;
+
     $conn->query($sql);
     $conn->close();
 }
